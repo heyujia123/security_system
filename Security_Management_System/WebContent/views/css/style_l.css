@@ -1,0 +1,79 @@
+@charset "utf-8";
+body {
+	background-color: #F0F0F0;
+}
+#main {
+	height: 460px;
+	width: 300px;
+	background-color: #FFF;
+	margin:50px auto;
+}
+#pic {
+	height: 200px;
+	width: 150px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-position: center 20px;
+}
+input {
+	border: 0;
+	width:150px;
+	margin-top: 11px;
+	margin-left: 40px;
+	background-color: #c9f1f4;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:15px;
+	color:#666;
+}
+.in{
+	height: 40px;
+	width: 210px;
+    margin: 20px auto;	
+	background-color: #c9f1f4;
+}
+
+#submit {
+	height: 70px;
+	width: 230px;
+	margin:0 auto;
+}
+#pass {
+	background-image: url(../img/password.png);
+	background-repeat: no-repeat;
+	background-position: 3px center;
+}
+#user {
+	background-image: url(../img/user.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+#register {
+	height: 20px;
+	width: 80px;
+	margin: auto;
+}
+#main #register a {
+	text-decoration: none;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #999;
+}
+#main #register a:hover{
+	color: #FFB062;
+	font-family: "微软雅黑";
+	text-decoration: underline;
+}
+#main #submit a img:hover {
+    background-image:url(img/submit2.png);
+}
+#inp{
+	height: 70px;
+	width: 230px;
+	margin: 0 auto;
+	background-image: url(../img/submit.png);
+	background-color: #FFAB60;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="10701096" />
+	<constant name="struts.multipart.saveDir" value="f:/tmp" />
+	<package name="default" extends="json-default">
+		<action name="login" class="cn.com.security_system.action.UserAction"
+			method="login">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="register" class="cn.com.security_system.action.UserAction"
+			method="register">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="getAllShares" class="cn.com.security_system.action.SharesAction"
+			method="getAllShares">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="addShares" class="cn.com.security_system.action.SharesAction"
+			method="addShares">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="updateShares" class="cn.com.security_system.action.SharesAction"
+			method="updateShares">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="deleteShares" class="cn.com.security_system.action.SharesAction"
+			method="deleteShares">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="getSharesById" class="cn.com.security_system.action.SharesAction"
+			method="getSharesById">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="search" class="cn.com.security_system.action.SearchAction"
+			method="search">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="addCollection" class="cn.com.security_system.action.CollectionAction"
+			method="addCollection">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="getByUid" class="cn.com.security_system.action.CollectionAction"
+			method="getByUid">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+		<action name="deleteCollection" class="cn.com.security_system.action.CollectionAction"
+			method="deleteCollection">
+			<result name="success" type="json">
+				<param name="root">responseJson</param>
+			</result>
+		</action>
+	</package>
+</struts>

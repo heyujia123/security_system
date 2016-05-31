@@ -1,0 +1,57 @@
+@charset "utf-8";
+body {
+	background-color:#F0F0F0;
+}
+#reg {
+	background-color: #FFF;
+	height: 740px;
+	width: 500px;
+	margin:20px auto;
+}
+#pic2 {
+	background-image: url(../img/logo.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 150px;
+	width: 150px;
+	margin: 10px auto;
+
+}
+#line {
+	height: 20px;
+	width: 500px;
+	background-image: url(../img/line.jpg);
+	background-repeat: no-repeat;
+}
+table {
+	margin: 20px auto;
+	text-align: center;
+}
+.text {
+	text-align: right;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	font-weight: 800;
+	color: #999;
+}
+input{
+    border:#CCC 1px solid;
+	height: 18px;
+}
+table td{
+    font-family:Verdana, Geneva, sans-serif;
+	color:#666;	
+}
+#confirm{
+	width:80px;
+	height:40px;
+    margin:0 auto;	
+}
+#inp{
+    width:80px;
+	height:40px;
+	background-color:#FFAB60;
+	color:#FFF;
+	font-family:Georgia, "Times New Roman", Times, serif;  
+		
+}

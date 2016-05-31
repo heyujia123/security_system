@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/navigation.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="http://hq.sinajs.cn/list=sh000001"
+	charset="gb2312"></script>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$('#aaa').append(li);
+						var elements = hq_str_sh000001.split(",");
+						var li = "<table><tr><th>指数名称&nbsp;&nbsp;&nbsp;</th><th>当前点数&nbsp;&nbsp;&nbsp;</th><th>当前价格&nbsp;&nbsp;&nbsp;</th><th>涨跌率&nbsp;&nbsp;&nbsp;</th><th>成交量&nbsp;&nbsp;&nbsp;</th><th>成交额&nbsp;&nbsp;&nbsp;</th></tr><tr><td>"
+								+ elements[0]
+								+ "</td><td>"
+								+ elements[1]
+								+ "</td><td>"
+								+ elements[2]
+								+ "</td><td>"
+								+ elements[3]
+								+ "</td><td>"
+								+ elements[4]
+								+ "</td><td>"
+								+ elements[5]
+								+ "</td></tr></table>";
+						$('#aaa').append(li);
+					});
+</script>
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<p id="reg">
+				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
+			</p>
+			<div id="gradient"></div>
+		</div>
+		<!--end of header-->
+		<!--header-->
+		<div id="navigation">
+			<ul>
+				<li id="first"><a href="index.html">首页<img
+						class="daoying_img" src="img/daoying1.png" /></a></li>
+				<li id="second"><a href="search.jsp">股票信息查询<img
+						class="daoying_img" src="img/daoying2.png" /></a></li>
+				<li id="third"><a href="sharesList.jsp">股票信息列表<img
+						class="daoying_img" src="img/daoying3.png" /></a></li>
+				<!--下拉菜单-->
+				<li id="four"><a href="collectionList.jsp">我的收藏<img
+						class="daoying_img" src="img/daoying4.png" /></a></li>
+			</ul>
+		</div>
+		<!--enf of navigation-->
+		<!--navigation-->
+
+		<div id="slider" class="case_box">
+			<ul>
+				<li class="case_1">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+				<li class="case_2">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+				<li class="case_3">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+				<li class="case_4">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+				<li class="case_5">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+				<li class="case_6">
+					<!--<dl class="case_info">
+				<dd></dd>
+                </dl>-->
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="layout">
+					<h5>股票走势</h5>
+					<div id="aaa"></div>
+					<div><br/><br/>
+					<img src="http://image.sinajs.cn/newchart/daily/n/sh000001.gif" />
+				</div>
+				<br />
+				<br />
+			</div>
+			<!--end of layout-->
+		</div>
+		<!--end of content-->
+		<div id="footer">
+			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+		</div>
+	</div>
+	<!--end of main-->
+	<script src="js/index.js"></script>
+	<script src="js/lunbo.js"></script>
+	<script src="js/navigation.js"></script>
+</body>
+</html>
