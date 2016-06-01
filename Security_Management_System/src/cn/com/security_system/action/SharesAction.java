@@ -155,6 +155,7 @@ public class SharesAction extends ActionSupport {
 
 	public String getAllShares() {
 		responseJson = new HashMap<String, Object>();
+		//根据type和查询条件获取股票列表
 		List<Shares> shares = sharesDao.getAllShares(type,queryStr);
 		Gson gson = new Gson();
 		responseJson.put("result", gson.toJson(shares));

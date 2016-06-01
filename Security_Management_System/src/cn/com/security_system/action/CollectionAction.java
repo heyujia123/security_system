@@ -16,6 +16,11 @@ import cn.com.security_system.dao.SharesDao;
 import cn.com.security_system.pojo.Collection;
 import cn.com.security_system.pojo.Shares;
 
+/**
+ * 收藏Action
+ * @author Administrator
+ *
+ */
 @Component
 @Scope
 public class CollectionAction extends ActionSupport {
@@ -128,18 +133,23 @@ public class CollectionAction extends ActionSupport {
 	public void setSharesId(long sharesId) {
 		this.sharesId = sharesId;
 	}
-
+	/**
+	 * 他娘收藏
+	 * @return
+	 */
 	public String addCollection() {
 		responseJson = new HashMap<>();
 		try {
 			Collection collection = new Collection();
+			//从session中获取用户id
 			ActionContext actionContext = ActionContext.getContext();
 			Map<String, Object> session = actionContext.getSession();
 			userId=Long.valueOf((String) session.get("user_id"));
-			System.out.println("userId:"+userId);
 			collection.setUserId(userId);
 			collection.setSharesId(sharesId);
+			//添加收藏信息至数据库
 			boolean result = collectionDao.addCollection(collection);
+			//返回插入结果
 			if (result) {
 				responseJson.put("result", "true");
 			} else {
@@ -150,7 +160,10 @@ public class CollectionAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-
+	/**
+	 * 查询用户收藏列表
+	 * @return
+	 */
 	public String getByUid() {
 		responseJson = new HashMap<>();
 		try {
@@ -162,28 +175,30 @@ public class CollectionAction extends ActionSupport {
 			userId=Long.valueOf((String) session.get("user_id"));
 			//根据用户id查询收藏列表
 			list = collectionDao.getCollectionByUId(userId);
+			//遍历list获取股票id的list
 			List<Long> ids = new ArrayList<>();
 			for (Collection collection : list) {
 				ids.add(collection.getSharesId());
 			}
 			List<Shares> sharesList = new ArrayList<>();
+			//根据股票id的list查询用户收藏的股票列表
 			sharesList = sharesDao.getByIds(ids);
-			System.out.println("sharesList size:"+sharesList.size());
-			for(Shares shares:sharesList){
-				System.out.println("sharesId:"+shares.getId());
-				System.out.println("sharesName:"+shares.getName());
-			}
 			responseJson.put("result", gson.toJson(sharesList));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return SUCCESS;
 	}
+	/**
+	 * 删除收藏信息列表
+	 * @return
+	 */
 	public String deleteCollection(){
 		responseJson=new HashMap<>();
 		try {
 			Collection collection=new Collection();
 			collection.setId(sharesId);
+			//根据id删除用户收藏信息
 			boolean result=collectionDao.deleteCollection(collection);
 			if(result){
 				responseJson.put("result", "true");

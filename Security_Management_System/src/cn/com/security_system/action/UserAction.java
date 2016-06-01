@@ -68,6 +68,7 @@ public class UserAction extends ActionSupport {
 			user = userDao.login(username, password);
 			Gson gson = new Gson();
 			if (null != user && null != user.getUser_id()) {
+				//登录成功后将用户id存入session
 				ActionContext actionContext = ActionContext.getContext();
 				Map<String, Object> session = actionContext.getSession();
 				session.put("user_id", user.getUser_id());

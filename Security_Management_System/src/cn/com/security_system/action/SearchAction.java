@@ -46,10 +46,11 @@ public class SearchAction extends ActionSupport {
 		String monthUrl = "http://image.sinajs.cn/newchart/monthly/n/sh"+number+".gif";
 		System.out.println("monthUrl"+monthUrl);
 		try {
-			// 请求数据
+			// 请求新浪股票api接口
 			String dataResult = httputils.connctionURL_Params(dataUrl, "GET", "");
 			dataResult=dataResult.substring(21, dataResult.length()-2);
 			Gson gson=new Gson();
+			//组装返回参数
 			SearchData searchData=new SearchData();
 			searchData.setData(dataResult);
 			searchData.setMinUrl(minUrl);
