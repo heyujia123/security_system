@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>新闻</title>
-<link href="css/search_style.css" rel="stylesheet" type="text/css" />
-<link href="css/navigation.css" rel="stylesheet" type="text/css" />
+<title>收藏列表</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/sharesList.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <style>
 table {
@@ -32,13 +34,20 @@ $(document).ready(function(){
 		success : function(data){
 				var result = JSON.parse(data.result);
 				for(var i=0;i<result.length;i++){
-					var li = "<tr><td>"+result[i].number+"</td><td>"+result[i].name+"</td><td>"+result[i].category+"</td><td>"+result[i].module+"</td><td>"+result[i].service+"</td><td>"
-					+result[i].subService+"</td><td>"+result[i].coreProduct+"</td><td>"+result[i].positiveFactors+"</td><td>"+result[i].nagetiveFactors+"</td><td>"+result[i].positiveMonth+"</td><td><input id='delete' type='image' src='img/delete.png' width=30' height='30'/></td></tr>";
+					var li="";
+					if(i%2==0){
+						var li = li+"<tr class='info'><td>"+result[i].number+"</td><td>"+result[i].name+"</td><td>"+result[i].category+"</td><td>"+result[i].module+"</td><td>"+result[i].service+"</td><td>"
+						+result[i].subService+"</td><td>"+result[i].coreProduct+"</td><td>"+result[i].positiveFactors+"</td><td>"+result[i].nagetiveFactors+"</td><td>"+result[i].positiveMonth+"</td><td><a href='#'><span class='glyphicon glyphicon-trash' id='delete'></span></a></td></tr>";
+					}else{
+						var li = li+"<tr class='success'><td>"+result[i].number+"</td><td>"+result[i].name+"</td><td>"+result[i].category+"</td><td>"+result[i].module+"</td><td>"+result[i].service+"</td><td>"
+						+result[i].subService+"</td><td>"+result[i].coreProduct+"</td><td>"+result[i].positiveFactors+"</td><td>"+result[i].nagetiveFactors+"</td><td>"+result[i].positiveMonth+"</td><td><a href='#'><span class='glyphicon glyphicon-trash' id='delete'></span></a></td></tr>";
+					}
 					$('#shares').append(li);
 					var sharesId = result[i].id;
 					$('#delete').click(
 							function() {
 								$.ajax({
+									
 											type : "post",
 											url : "deleteCollection",
 											dataType : "json",
@@ -60,61 +69,64 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div id="main">
-		<div id="header">
-			<p id="reg">
-				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
-			</p>
-			<div id="gradient"></div>
-		</div>
-		<!--end of header-->
-		<div id="navigation">
+<div id="header">
+	<p id="reg">
+		<a href="login.jsp">注销</a> <a href="#">加入我们</a>
+	</p>
+</div>
+<div id="navigation">
 			<ul>
-				<li id="first"><a href="index.html">首页<img
-						class="daoying_img" src="img/daoying1.png" /></a></li>
-				<li id="second"><a href="search.jsp">股票信息查询<img
+				<li class="nav_active" id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+						class="daoying_img" src="img/daoying6.png" /></a></li>
+				<li id="second"><a href="search.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList.jsp">股票信息列表<img
+				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="collectionList.jsp">我的收藏<img
-						class="daoying_img" src="img/daoying4.png" /></a></li>
+				<li id="four"><a href="collection.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img
+						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
-		</div>
-		<div id="body1">
+</div>
+
+<div id="body1">
 			<div id="part1">
-				<div id="top"><h3>股票列表</h3></div>
-				<div id="cont">
-					<table id="shares">
-						<tr>
-							<th>股票代号&nbsp;&nbsp;</th>
-							<th>股票名称&nbsp;&nbsp;</th>
-							<th>所属行业&nbsp;&nbsp;</th>
-							<th>所属模块&nbsp;&nbsp;</th>
-							<th>主要业务&nbsp;&nbsp;</th>
-							<th>副业务&nbsp;&nbsp;</th>
-							<th>核心产品&nbsp;&nbsp;</th>
-							<th>利好因素&nbsp;&nbsp;</th>
-							<th>利空因素&nbsp;&nbsp;</th>
-							<th>利好月份&nbsp;&nbsp;</th>
-							<th>操作&nbsp;&nbsp;</th>
-						</tr>
-					</table>
+				<div id="cont" class="container">
+                     <hr />
+					<table class="table table-striped">
+						<caption>股票列表</caption>
+						<thead>
+     					<tr>
+                        	<th>股票代号</th>
+    						<th>股票名称</th>
+        					<th>所属行业</th>
+                        	<th>所属模块</th>
+        					<th>主要业务</th>
+                        	<th>付业务</th>
+        					<th>核心产品</th>
+                        	<th>利好因素</th>
+                            <th>利好因素</th>
+                        	<th>利好月份</th>
+        					<th>操作</th>
+      					</tr>
+    					</thead>
+    					<tbody id="shares">
+    			</tbody>
+			</table>
+					<div id= img1></div>
 				</div>
 				<!--end of cont-->
 			</div>
 			<!--end of part 1-->
 			<div id="img"></div>
 
-		</div>
-		<!--end of body-->
-		<div id="footer">
-			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
-		</div>
-		<!--end of footer-->
-	</div>
-	<!--end of main-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/navigation.js"></script>
+</div>
+
+ <div id="footer" class="center-block navbar-fixed-bottom">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.12.1development.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

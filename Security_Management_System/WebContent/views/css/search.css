@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+#top{
+	margin-top:10px;
+	margin-bottom:20px;
+	background:#09C;
+	padding-left:25px;
+	padding-top:10px;
+	position:relative;
+	height:50px;}
+#search{
+	background:#FFF;
+	height:32px;
+	margin-left:50px;
+	width:240px;
+	}
+#submit{
+	position:absolute;
+	top:12px;
+	left:20px;}
+#cont table{
+	font-size:16px;}
+	
+#sina .sina{
+	margin-bottom:20px;

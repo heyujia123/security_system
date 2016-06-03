@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*样式重置*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input,button
+{padding:0; margin:0;}
+ul,ol,li{list-style:none;}
+body{font-size:12px;}
+img{border:none;}
+a{text-decoration:none;}
+input,select,textarea,button{border:none; outline:none; background:none;}
+.clearfix:after{content:""; display:block; clear:both;}
+
+
+/*头部*/
+#header{width:100%;
+	height:90px;
+	background:url(../img/title.png) 150px center no-repeat;
+	background-size:220px 60px;
+	}
+/*导航栏*/
+#navigation {
+	width:100%;
+	height:60px;
+	margin-bottom:10px;
+	background:url(../img/index_nav.png) repeat-x;
+}
+#navigation ul{
+	padding-left:150px;
+	text-align: center;
+}
+#navigation li{
+	float: left;
+	margin-left:60px;
+	width:180px;
+	font-size: 20px;
+	font-weight:bold;
+	padding:20px 0 15px 0;
+	position:relative;
+	
+}
+#navigation ul li a{
+	color:rgb(255,255,255);
+	display: block;
+	height: 25px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.daoying_img{
+	position:absolute;
+	padding-top:5px;
+	left:40px;
+	display:block;
+}
+#navigation ul li a:hover{
+	text-decoration:none;
+	font-size:24px;}
+#reg{
+	position:absolute;
+	right:180px;
+	top:30px;
+	}
+#reg a{
+	font-size:18px;
+	color:#000;}
+.nav_active{
+	background:#09F;
+}
+.nav_active a{
+	font-size:24px;}
+
+/*尾部*/
+#footer{
+	height:100px;
+	border-top:2px solid #FFF;
+	padding:20px 0;
+	background:#3d80ba;
+	text-align:center;
+	font-size:16px;
+	color:#FFF;
+	opacity:0.9;
+}

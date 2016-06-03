@@ -5,7 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>用户注册</title>
-<link href="css/style_r.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/register.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -44,28 +45,44 @@
 </head>
 
 <body>
-	<div id="reg">
-		<div id="pic2"></div>
-		<div id="line"></div>
-		<div id="box">
-			<table width="300" border="0" cellspacing="0">
-				<tr>
-					<td height="32" class="text">用户名：</td>
-					<td><input name="name" type="text" id="username" /></td>
-				</tr>
-				<tr>
-					<td height="32" class="text">输入密码：</td>
-					<td><input name="name" type="password" id="password" /></td>
-				</tr>
-				<tr>
-					<td height="32" class="text">确认密码：</td>
-					<td><input name="name" type="password" id="password2" /></td>
-				</tr>
-			</table>
-		</div>
-		<div id="confirm">
-			<input name="confirm" type="button" value="确认" id="inp" />
-		</div>
+	<div id="header"></div>
+<div id="container">
+	<div id="reg" class="reg">
+    	<div id="box" class=" container-fluid">
+            <div class="form-group">
+                <label for="name">用户名：</label>
+                <input type="text" class="form-control" name="name" required placeholder="请输入用户名" />
+            </div>
+            <div class="form-group">
+                <label for="name">邮箱：</label>
+                <input type="text" class="form-control" name="name" required placeholder="请输入邮箱" />
+            </div>
+            <div class="form-group">
+                <label for="name">电话：</label>
+                <input type="text" class="form-control" name="name" required placeholder="请输入电话" />
+            </div>
+            
+            <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" class="form-control" name="name" required placeholder="请输入密码" />
+            </div>
+            <div class="form-group">
+                <label for="pwdCheck">确认密码：</label>
+                <input type="password" class="form-control" name="name" required placeholder="请再次输入密码" />
+            </div>
+    	</div>
+    	<div id="confirm">
+    		<input name="confirm" type="button" class="btn btn-danger btn-lg" value="立即注册" id="inp"/></div>
 	</div>
+    <div class="register_pic">
+    </div>
+</div>
+<div id="footer" class="center-block">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
+</div>
+<script src="js/jquery-1.12.1development.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

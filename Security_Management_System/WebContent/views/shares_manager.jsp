@@ -5,8 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>股票详情</title>
-<link href="css/search_style.css" rel="stylesheet" type="text/css" />
-<link href="css/navigation.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/share_manager.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <style>
 table {
@@ -36,8 +38,16 @@ table {
 									},
 									success : function(data) {
 										var result = JSON.parse(data.result);
-										var li = "股票代号:&nbsp;&nbsp; <input type='text'  id='number' value='"+result.number+"'><br/><br/>股票名称:&nbsp;&nbsp;<input type='text' id='name' value='"+result.name+"'><br/><br/>所属行业:&nbsp;&nbsp;<input type='text' id='category' value='"+result.category+"'><br/><br/>所属模块:&nbsp;&nbsp;<input type='text' id='module' value='"+result.module+"'><br/><br/>主要业务:&nbsp;&nbsp;<input type='text' id='service' value='"+result.service+"'><br/><br/>副业务:&nbsp;&nbsp;&nbsp;<input type='text' id='subService' value='"
-				+result.subService+"'><br/><br/>核心产品:&nbsp;&nbsp;<input type='text' id='coreProduct' value='"+result.coreProduct+"'><br/><br/>利好因素:&nbsp;&nbsp;<input type='text' id='positiveFactors' value='"+result.positiveFactors+"'><br/><br/>利空因素:&nbsp;&nbsp;<input type='text' id='nagetiveFactors' value='"+result.nagetiveFactors+"'><br/><br/>利好月份:&nbsp;&nbsp;<input type='text' id='positive' value='"+result.positiveMonth+"'><br/><br/>";
+										var li = "<div class='form-group'><label class='col-sm-2 control-label '>股票代号:</label><div class='col-sm-5'><input type='text' class='form-control' id='number' value='"+result.number+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>股票名称:</label><div class='col-sm-5'><input type='text' class='form-control' id='name' value='"+result.name+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>所属行业:</label><div class='col-sm-5'><input type='text' class='form-control' id='category' value='"+result.category+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>所属模块:</label><div class='col-sm-5'><input type='text' class='form-control' id='module' value='"+result.module+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>主要业务:</label><div class='col-sm-5'><input type='text' class='form-control' id='service' value='"+result.service+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>副业务:</label><div class='col-sm-5'><input type='text' class='form-control' id='subService' value='"+result.subService+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>核心产品:</label><div class='col-sm-5'><input type='text' class='form-control' id='coreProduct' value='"+result.coreProduct+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>利好因素:</label><div class='col-sm-5'><input type='text' class='form-control' id='positiveFactors' value='"+result.positiveFactors+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>利空因素:</label><div class='col-sm-5'><input type='text' class='form-control' id='nagetiveFactors' value='"+result.nagetiveFactors+"'></div></div>"
+										+"<div class='form-group'><label class='col-sm-2 control-label '>利好月份:</label><div class='col-sm-5'><input type='text' class='form-control' id='positiveMonth' value='"+result.positiveMonth+"'></div></div>"
 										$('#shares').append(li);
 									}
 								});
@@ -111,50 +121,48 @@ table {
 </head>
 <body>
 	<input type="hidden" id="id" value=<%=request.getParameter("id")%>>
-	<div id="main">
-		<div id="header">
-			<p id="reg">
-				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
-			</p>
-			<div id="gradient"></div>
-		</div>
-		<!--end of header-->
-		<div id="navigation">
+	<div id="header">
+	<p id="reg">
+		<a href="login.jsp">管理员登陆</a> <a href="#">加入我们</a>
+	</p>
+</div>
+<div id="navigation">
 			<ul>
-				<li id="first"><a href="index_manager.html">首页<img
-						class="daoying_img" src="img/daoying1.png" /></a></li>
-				<li id="second"><a href="search_manager.jsp">股票信息查询<img
+				<li class="nav_active" id="first"><a href="index_manager.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+						class="daoying_img" src="img/daoying6.png" /></a></li>
+				<li id="second"><a href="search_manager.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList_manager.jsp">股票信息列表<img
+				<li id="third"><a href="sharesList_manager.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="manager.jsp">股票管理<img
-						class="daoying_img" src="img/daoying4.png" /></a></li>
+				<li id="four"><a href="manager.jsp"><span class="glyphicon glyphicon-cog"></span> 股票管理<img
+						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
-		</div>
-		<div id="body1">
+</div>
+
+<div id="body1" class="container">
 			<div id="part1">
 				<div id="top">
-					<input type="button" id="delete" name="delete" value="删除">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="update" name="update" value="修改">
+					<input class="btn btn-danger" type="button" id="delete" name="delete" value="删除">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn-success" type="button" id="update" name="update" value="修改">
 				</div>
+                <hr />
 				<div id="cont">
-					<h2>股票详情</h2>
-					<div id="shares"></div>
+					<h3>股票详情</h3>
+					<div id="shares" class="form-horizontal">
+                    </div>
 				</div>
 				<!--end of cont-->
 			</div>
 			<!--end of part 1-->
 			<div id="img"></div>
 
-		</div>
-		<!--end of body-->
-		<div id="footer">
-			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
-		</div>
-		<!--end of footer-->
-	</div>
-	<!--end of main-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/navigation.js"></script>
+</div>
+ <div id="footer" class="center-block">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.12.1development.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

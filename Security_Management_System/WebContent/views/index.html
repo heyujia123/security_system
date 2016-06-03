@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 <title>首页</title>
-<link href="css/index.css" rel="stylesheet" type="text/css" />
-<link href="css/navigation.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/navigation.css" />
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="http://hq.sinajs.cn/list=sh000001"
 	charset="gb2312"></script>
@@ -12,10 +14,8 @@
 	$(document)
 			.ready(
 					function() {
-						$('#aaa').append(li);
 						var elements = hq_str_sh000001.split(",");
-						var li = "<table><tr><th>指数名称&nbsp;&nbsp;&nbsp;</th><th>当前点数&nbsp;&nbsp;&nbsp;</th><th>当前价格&nbsp;&nbsp;&nbsp;</th><th>涨跌率&nbsp;&nbsp;&nbsp;</th><th>成交量&nbsp;&nbsp;&nbsp;</th><th>成交额&nbsp;&nbsp;&nbsp;</th></tr><tr><td>"
-								+ elements[0]
+						var li = "<tr class='info'><td>"+elements[0]
 								+ "</td><td>"
 								+ elements[1]
 								+ "</td><td>"
@@ -26,91 +26,116 @@
 								+ elements[4]
 								+ "</td><td>"
 								+ elements[5]
-								+ "</td></tr></table>";
-						$('#aaa').append(li);
+								+ "</td></tr>"
+								+"<tr class='info'><td>"+elements[0]
+								+ "</td><td>"
+								+ elements[1]
+								+ "</td><td>"
+								+ elements[2]
+								+ "</td><td>"
+								+ elements[3]
+								+ "</td><td>"
+								+ elements[4]
+								+ "</td><td>"
+								+ elements[5]
+								+ "</td></tr>"
+								+"<tr class='info'><td>"+elements[0]
+								+ "</td><td>"
+								+ elements[1]
+								+ "</td><td>"
+								+ elements[2]
+								+ "</td><td>"
+								+ elements[3]
+								+ "</td><td>"
+								+ elements[4]
+								+ "</td><td>"
+								+ elements[5]
+								+ "</td></tr>";
+						$('#tbody').append(li);
 					});
 </script>
 </head>
 <body>
-	<div id="main">
-		<div id="header">
-			<p id="reg">
-				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
-			</p>
-			<div id="gradient"></div>
-		</div>
-		<!--end of header-->
-		<!--header-->
-		<div id="navigation">
+<div id="header">
+	<p id="reg">
+		<a href="login.jsp">注销</a> <a href="#">加入我们</a>
+	</p>
+</div>
+<div id="navigation">
 			<ul>
-				<li id="first"><a href="index.html">首页<img
-						class="daoying_img" src="img/daoying1.png" /></a></li>
-				<li id="second"><a href="search.jsp">股票信息查询<img
+				<li class="nav_active" id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+						class="daoying_img" src="img/daoying6.png" /></a></li>
+				<li id="second"><a href="search.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList.jsp">股票信息列表<img
+				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="collectionList.jsp">我的收藏<img
-						class="daoying_img" src="img/daoying4.png" /></a></li>
+				<li id="four"><a href="collection.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img
+						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
 		</div>
+<div id="main">
+		<!--end of header-->
+		<!--header-->
+		
 		<!--enf of navigation-->
 		<!--navigation-->
-
-		<div id="slider" class="case_box">
-			<ul>
-				<li class="case_1">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-				<li class="case_2">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-				<li class="case_3">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-				<li class="case_4">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-				<li class="case_5">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-				<li class="case_6">
-					<!--<dl class="case_info">
-				<dd></dd>
-                </dl>-->
-				</li>
-			</ul>
-		</div>
-		<div id="content">
-			<div id="layout">
-					<h5>股票走势</h5>
-					<div id="aaa"></div>
-					<div><br/><br/>
-					<img src="http://image.sinajs.cn/newchart/daily/n/sh000001.gif" />
-				</div>
-				<br />
-				<br />
+		<div class="container">
+			<div class="carousel slide" id="myCarousel">
+				<ol class="carousel-indicators">
+    				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        			<li data-target="#myCarousel" data-slide-to="1"></li>
+    			</ol>
+    			<div class="carousel-inner">
+    			<div class="item active">
+        			<img src="img/banner1.jpg" alt="pic1" />
+        		</div>
+        		<div class="item">
+        			<img src="img/banner2.jpg" alt="pic2" />
+        		</div>
+    			</div>
+    			<a href="#myCarousel" class="carousel-control left" data-slide="prev">
+    				<span class="glyphicon glyphicon-chevron-left"></span>
+    			</a>
+    			<a href="#myCarousel" class="carousel-control right" data-slide="next">
+    				<span class="glyphicon glyphicon-chevron-right"></span>
+    			</a>
 			</div>
-			<!--end of layout-->
 		</div>
+        <hr />
+        <div id="content" class="container">
+        	<div id="layout">
+				<table class="table table-striped">
+					<caption>股票走势</caption>
+				<thead>
+     				<tr>
+    					<th>指数名称</th>
+        				<th>当前点数</th>
+                        <th>当前价格</th>
+        				<th>涨跌率</th>
+                        <th>成交量</th>
+        				<th>成交额</th>
+      				</tr>
+    			</thead>
+    			<tbody id="tbody">
+                    
+    			</tbody>
+			</table>
+			</div>
+        </div>
 		<!--end of content-->
-		<div id="footer">
-			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+       
+</div>
+
+ <div id="footer" class="center-block">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
 		</div>
-	</div>
-	<!--end of main-->
-	<script src="js/index.js"></script>
-	<script src="js/lunbo.js"></script>
-	<script src="js/navigation.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.1development.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	$('#myCarousel').carousel();
+</script>
 </body>
 </html>

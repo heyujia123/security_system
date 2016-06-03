@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+#body1{
+	padding-left:30px;
+	padding-bottom:30px;}
+#part1 hr{
+	height:3px;
+	background:#CCC;}
+#part1 h3{
+	margin-left:10px;
+	margin-bottom:20px;}
+#cont label{
+	font-size:16px;}
+	
+#part1 h2{
+	margin-top:10px;}
+	
+#part1 .btn_submit{
+	margin-top:20px;
+	margin-left:190px;}
+#part1 .btn_submit2{
+	margin-top:20px;
+}
+
+
+/*收藏下的股票详情*/
+#part1 .collect{
+	margin-top:10px;}
+
+.sharesDetails{
+	margin-top:20px;
+	padding-left:20px;}
+.sharesDetails li{
+	height:30px;
+	line-height:30px;
+	font-size:20px;}
+.sharesDetails li span{
+	margin-left:40px;}

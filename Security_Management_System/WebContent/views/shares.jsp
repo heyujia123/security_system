@@ -5,8 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>股票详情</title>
-<link href="css/search_style.css" rel="stylesheet" type="text/css" />
-<link href="css/navigation.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/share_manager.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <style>
 table {
@@ -32,12 +34,12 @@ $(document).ready(function(){
 		data : {"id":id},
 		success : function(data){
 			var result = JSON.parse(data.result);
-				var li = "股票代号:&nbsp;&nbsp;"+result.number+"<br/><br/>股票名称:&nbsp;&nbsp;"+result.name+"<br/><br/>所属行业:&nbsp;&nbsp;"+result.category+"<br/><br/>所属模块:&nbsp;&nbsp;"+result.module+"<br/><br/>主要业务:&nbsp;&nbsp;"+result.service+"<br/><br/>副业务:&nbsp;&nbsp;&nbsp;"
-				+result.subService+"<br/><br/>核心产品:&nbsp;&nbsp;"+result.coreProduct+"<br/><br/>利好因素:&nbsp;&nbsp;"+result.positiveFactors+"<br/><br/>利空因素:&nbsp;&nbsp;"+result.nagetiveFactors+"<br/><br/>利好月份:&nbsp;&nbsp;"+result.positiveMonth+"<br/><br/>";
-				$('#shares').append(li);
+				var li = "<li><span>股票代号:</span><span>"+result.number+"</span></li><li><span>股票名称:</span><span>"+result.name+"</span></li><li><span>所属行业:</span><span>"+result.category+"</span></li><li><span>所属模块:</span><span>"+result.module+"</span></li><li><span>主要业务:</span><span>"+result.service+"</span></li><li><span>副业务:</span><span>"
+				+result.subService+"</span></li><li><span>核心产品:</span><span>"+result.coreProduct+"</span></li><li><span>利好因素:</span><span>"+result.positiveFactors+"</span></li><li><span>利空因素:</span><span>"+result.nagetiveFactors+"</span></li><li><span>利好月份:</span><span>"+result.positiveMonth+"</span></li>";
+				$('#sharesDetails').append(li);
 		}
 	});
-	$('#collection')
+	$('#collect')
 	.click(
 			function() {
 				var id = $('#id').val();
@@ -64,50 +66,52 @@ $(document).ready(function(){
 </head>
 <body>
 <input type="hidden" id="id" value=<%=request.getParameter("id")%>>
-	<div id="main">
-		<div id="header">
-			<p id="reg">
-				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
-			</p>
-			<div id="gradient"></div>
-		</div>
-		<!--end of header-->
-		<div id="navigation">
-			<ul>
-				<li id="first"><a href="index.html">首页<img
-						class="daoying_img" src="img/daoying1.png" /></a></li>
-				<li id="second"><a href="search.jsp">股票信息查询<img
+<div id="header">
+	<p id="reg">
+		<a href="login.jsp">注销</a> <a href="#">加入我们</a>
+	</p>
+</div>
+<div id="navigation">
+						<ul>
+				<li class="nav_active" id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+						class="daoying_img" src="img/daoying6.png" /></a></li>
+				<li id="second"><a href="search.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList.jsp">股票信息列表<img
+				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="collectionList.jsp">我的收藏<img
-						class="daoying_img" src="img/daoying4.png" /></a></li>
+				<li id="four"><a href="collection.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img
+						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
-		</div>
-		<div id="body1">
-			<div id="part1">
-				<div id="top">
-				<input type="button" id="collection" value="收藏" width="200px" height="50px">
-				</div>
-				<div id="cont">
-					<h2>股票详情</h2>
-					<div id="shares" ></div>
-				</div>
-				<!--end of cont-->
-			</div>
-			<!--end of part 1-->
-			<div id="img"></div>
 
+</div>
+
+<div id="body1" class="container">
+	<div id="part1">
+		<div id="top">
+        	<input class="btn btn-info collect" type="button" id="collect" name="collect" value="收藏">
 		</div>
-		<!--end of body-->
-		<div id="footer">
-			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+		<div id="cont">
+        	<hr />
+			<h2>股票详情</h2>
+			<div id="shares" >
+            	<ul class="sharesDetails" id="sharesDetails">
+                </ul>
+            </div>
 		</div>
-		<!--end of footer-->
+				<!--end of cont-->
 	</div>
-	<!--end of main-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/navigation.js"></script>
+			<!--end of part 1-->
+	<div id="img"></div>
+
+</div>
+
+ <div id="footer" class="center-block">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.12.1development.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

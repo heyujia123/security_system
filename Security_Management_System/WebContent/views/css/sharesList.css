@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#top{
+	margin-top:20px;
+	background:#09C;
+	padding-left:20px;
+	padding-top:10px;
+	position:relative;
+	height:50px;}
+#top select{
+	width:100px;
+	height:32px;
+	background:#FFF;
+	position:absolute;
+	top:10px;
+	left:80px;
+	border-radius:2px;
+	font-size:14px;
+	color:#999;
+	text-indent:2px;
+	white-space:1px;}
+#search{
+	background:#FFF;
+	height:32px;
+	margin-left:180px;
+	width:240px;
+	}
+#submit{
+	position:absolute;
+	top:12px;
+	left:30px;}
+
+#cont{
+	padding-left:0;
+	padding-right:0;}	
+#cont hr{
+	background:#CCC;
+	height:4px;}
+#cont caption{
+	font-size:20px;
+	color:#000;
+	font-weight:bold;}
+#cont table{
+	font-size:14px;
+}
+#cont table a{
+	color:red;}
+

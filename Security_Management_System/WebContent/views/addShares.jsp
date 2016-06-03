@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>新闻</title>
-<link href="css/search_style.css" rel="stylesheet" type="text/css" />
-<link href="css/navigation.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<title>添加股票</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/basic.css" />
+<link rel="stylesheet" href="css/share_manager.css" /><script type="text/javascript" src="js/jquery.min.js"></script>
 <style>
 table {
 	border-collapse: separate;
@@ -24,7 +25,7 @@ table {
 </style>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#add').click(function() {
+		$('#submit').click(function() {
 			var number = $('#number').val();
 			var name = $('#name').val();
 			var category = $('#category').val();
@@ -68,43 +69,95 @@ table {
 </script>
 </head>
 <body>
-	<div id="main">
-		<div id="header">
-			<p id="reg">
-				<a href="login.jsp">注销</a> <a href="#">加入我们</a>
-			</p>
-			<div id="gradient"></div>
-		</div>
-		<!--end of header-->
-		<div id="navigation">
+<div id="header">
+	<p id="reg">
+		<a href="css/login.jsp">注销</a> <a href="#">加入我们</a>
+	</p>
+</div>
+<div id="navigation">
 			<ul>
-				<li id="first"><a href="index.html">首页<img
-						class="daoying_img" src="img/daoying1.png" /></a></li>
-				<li id="second"><a href="search.jsp">股票信息查询<img
+				<li class="nav_active" id="first"><a href="index_manager.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+						class="daoying_img" src="img/daoying6.png" /></a></li>
+				<li id="second"><a href="search_manager.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList.jsp">股票信息列表<img
+				<li id="third"><a href="sharesList_manager.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="manager.jsp">股票管理<img
-						class="daoying_img" src="img/daoying4.png" /></a></li>
+				<li id="four"><a href="manager.jsp"><span class="glyphicon glyphicon-cog"></span> 股票管理<img
+						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
-		</div>
-		<div id="body1">
+</div>
+
+<div id="body1" class="container">
 			<div id="part1">
-				<div id="top"><p>添加股票</p></div>
+				<h2>添加股票</h2>
+                <hr />
 				<div id="cont">
-						股票代码:<input type="text" name="number" id="number" /><br/><br/>
-						股票名称:<input type="text" name="name" id="name" /><br/><br/>
-						所属行业:<input type="text" name="category" id="category" /><br/><br/>
-						所属模块:<input type="text" name="module" id="module" /><br/><br/>
-						主要业务:<input type="text" name="service" id="service" /><br/><br/>
-						副业务:  <input type="text" name="subService" id="subService" /><br/><br/>
-						核心产品:<input type="text" name="coreProduct" id="coreProduct" /><br/><br/>
-						利好因素:<input type="text" name="positiveFactors" id="positiveFactors" /><br/><br/>
-						利空因素:<input type="text" name="nagetiveFactors" id="nagetiveFactors" /><br/><br/>
-						利好月份:<input type="text" name="positiveMonth" id="positiveMonth" /><br/><br/>
-						<input type="button" name="submit" id="submit" value="保存">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="manager.jsp"><input type="button" name="submit" id="submit" value="返回"></a>
+					<h3>股票详情</h3>
+					<div id="shares" class="form-horizontal">
+                    	<div class="form-group">
+    						<label class="col-sm-2 control-label ">股票代号：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control" />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">股票名称：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">所属行业：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">所属模块：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control" />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">主要业务：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">副业务：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">核心产品：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">利好因素：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">利空因素：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                        <div class="form-group">
+    						<label class="col-sm-2 control-label ">利好月份：</label>
+        					<div class="col-sm-5">
+								<input type="text" class="form-control"  />
+        					</div>
+  						</div>
+                    </div>
+                    <input class="btn btn-success btn_submit" type="button" name="submit" id="submit" value="保存">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="manager.jsp"><input class="btn btn-primary btn_submit2"type="button" name="submit" id="back" value="返回"></a>
 
 				</div>
 				<!--end of cont-->
@@ -112,15 +165,13 @@ table {
 			<!--end of part 1-->
 			<div id="img"></div>
 
-		</div>
-		<!--end of body-->
-		<div id="footer">
-			<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
-		</div>
-		<!--end of footer-->
-	</div>
-	<!--end of main-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/navigation.js"></script>
+</div>
+ <div id="footer" class="center-block">
+			<div class="container">
+        		<p class="footer">版权所有：大连理工大学软件学院白晨阳</p>
+   		 	</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.12.1development.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>
