@@ -73,11 +73,11 @@ $(document).ready(function(){
 </div>
 <div id="navigation">
 						<ul>
-				<li class="nav_active" id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+				<li id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
 						class="daoying_img" src="img/daoying6.png" /></a></li>
 				<li id="second"><a href="search.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
+				<li id="third" class="nav_active"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
 				<li id="four"><a href="collectionList.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img

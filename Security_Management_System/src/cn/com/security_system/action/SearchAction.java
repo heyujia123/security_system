@@ -1,5 +1,6 @@
 package cn.com.security_system.action;
 
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.context.annotation.Scope;
@@ -29,6 +30,7 @@ public class SearchAction extends ActionSupport {
 	private Map<String, Object> responseJson;
 
 	public String search() {
+		long startTime=System.currentTimeMillis();
 		responseJson=new HashMap<>();
 		// 获取数据的url
 		String dataUrl = "http://hq.sinajs.cn/list=sh" + number;
@@ -58,6 +60,8 @@ public class SearchAction extends ActionSupport {
 			searchData.setWeeklyUrl(weeklyUrl);
 			searchData.setMonthUrl(monthUrl);
 			responseJson.put("result", gson.toJson(searchData));
+			long endTime=System.currentTimeMillis();
+			System.out.println("time:"+(endTime-startTime));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
