@@ -28,7 +28,7 @@
 									},
 									success : function(data) {
 										$("#shares").empty();
-										$("#img1").empty();
+										$("#sina").empty();
 										var result = JSON.parse(data.result);
 										var elements=result.data.split(",");
 										var li="<td>"+ elements[0]
@@ -51,8 +51,8 @@
 										var li2="<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+minUrl+"'/></div>"+
 										"<div class='col-md-6 sina'><img class='img-responsive' src='"+dailyUrl+"'/></div></div>"+
 										"<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+weeklyUrl+"'/></div>"+
-										"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>"+
-										$('#img1').append(li2);
+										"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>";
+										$('#sina').append(li2);
 										}
 								});	
 							}
@@ -71,7 +71,7 @@
 			},
 			success : function(data) {
 				$("#shares").empty();
-				$("#sina").empty();
+				$("#img1").empty();
 				var result = JSON.parse(data.result);
 				var elements=result.data.split(",");
 				var li="<td>"+ elements[0]
@@ -95,7 +95,7 @@
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+dailyUrl+"'/></div></div>"+
 				"<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+weeklyUrl+"'/></div>"+
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>"+
-				$('#sina').append(li2);
+				$('#image111').append(li2);
 				}
 		});	
 	}
@@ -110,11 +110,11 @@
 </div>
 <div id="navigation">
 			<ul>
-				<li class="nav_active" id="first"><a href="index_manager.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
+				<li class="nav_active" id="first"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 网站首页<img
 						class="daoying_img" src="img/daoying6.png" /></a></li>
-				<li id="second"><a href="search_manager.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
+				<li id="second"><a href="search.jsp"><span class="glyphicon glyphicon-search"></span> 实时数据<img
 						class="daoying_img" src="img/daoying2.png" /></a></li>
-				<li id="third"><a href="sharesList_manager.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
+				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
 				<li id="four"><a href="manager.jsp"><span class="glyphicon glyphicon-cog"></span> 股票管理<img
