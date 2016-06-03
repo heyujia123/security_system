@@ -90,7 +90,7 @@ $(document).ready(function(){
 				<li id="third"><a href="sharesList.jsp"><span class="glyphicon glyphicon-th-list"></span> 股票信息查询<img
 						class="daoying_img" src="img/daoying3.png" /></a></li>
 				<!--下拉菜单-->
-				<li id="four"><a href="collection.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img
+				<li id="four"><a href="collectionList.jsp"><span class="glyphicon glyphicon-cog"></span> 我的收藏<img
 						class="daoying_img" src="img/daoying5.png" /></a></li>
 			</ul>
 </div>
