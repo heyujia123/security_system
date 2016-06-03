@@ -22,7 +22,6 @@ $(document).ready(function(){
 		if(type==1){
 			if(username=='admin'&&password=='123'){
 				<% session.setAttribute("user_id",1);%>
-				alert('管理员登录成功');
 				window.location.href="manager.jsp";
 				
 			}else{
