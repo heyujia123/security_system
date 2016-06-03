@@ -71,7 +71,7 @@
 			},
 			success : function(data) {
 				$("#shares").empty();
-				$("#img1").empty();
+				$("#sina").empty();
 				var result = JSON.parse(data.result);
 				var elements=result.data.split(",");
 				var li="<td>"+ elements[0]
@@ -95,7 +95,7 @@
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+dailyUrl+"'/></div></div>"+
 				"<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+weeklyUrl+"'/></div>"+
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>"+
-				$('#img1').append(li2);
+				$('#sina').append(li2);
 				}
 		});	
 	}
@@ -145,7 +145,7 @@
                      <hr />
 				</div>
 				<!--end of cont-->
-                <div id="img1">
+                <div id="sina">
                 </div>
 			</div>
 			<!--end of part 1-->

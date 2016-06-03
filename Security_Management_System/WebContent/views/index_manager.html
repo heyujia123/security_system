@@ -8,13 +8,15 @@
 <link rel="stylesheet" href="css/basic.css" />
 <link rel="stylesheet" href="css/navigation.css" />
 <script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="http://hq.sinajs.cn/list=sh000001"
+<script type="text/javascript" src="http://hq.sinajs.cn/list=sh000001,sz399006,sz399001"
 	charset="gb2312"></script>
 <script type="text/javascript">
 	$(document)
 			.ready(
 					function() {
 						var elements = hq_str_sh000001.split(",");
+						var elements1 = hq_str_sz399006.split(",");
+						var elements2 = hq_str_sz399001.split(",");
 						var li = "<tr class='info'><td>"+elements[0]
 								+ "</td><td>"
 								+ elements[1]
@@ -27,29 +29,29 @@
 								+ "</td><td>"
 								+ elements[5]
 								+ "</td></tr>"
-								+"<tr class='info'><td>"+elements[0]
+								+"<tr class='info'><td>"+elements1[0]
 								+ "</td><td>"
-								+ elements[1]
+								+ elements1[1]
 								+ "</td><td>"
-								+ elements[2]
+								+ elements1[2]
 								+ "</td><td>"
-								+ elements[3]
+								+ elements1[3]
 								+ "</td><td>"
-								+ elements[4]
+								+ elements1[4]
 								+ "</td><td>"
-								+ elements[5]
+								+ elements1[5]
 								+ "</td></tr>"
-								+"<tr class='info'><td>"+elements[0]
+								+"<tr class='info'><td>"+elements2[0]
 								+ "</td><td>"
-								+ elements[1]
+								+ elements2[1]
 								+ "</td><td>"
-								+ elements[2]
+								+ elements2[2]
 								+ "</td><td>"
-								+ elements[3]
+								+ elements2[3]
 								+ "</td><td>"
-								+ elements[4]
+								+ elements2[4]
 								+ "</td><td>"
-								+ elements[5]
+								+ elements2[5]
 								+ "</td></tr>";
 						$('#tbody').append(li);
 					});
