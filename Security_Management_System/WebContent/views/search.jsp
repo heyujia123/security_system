@@ -51,7 +51,7 @@
 										var li2="<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+minUrl+"'/></div>"+
 										"<div class='col-md-6 sina'><img class='img-responsive' src='"+dailyUrl+"'/></div></div>"+
 										"<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+weeklyUrl+"'/></div>"+
-										"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>"+
+										"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>";
 										$('#img1').append(li2);
 										}
 								});	
@@ -95,7 +95,7 @@
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+dailyUrl+"'/></div></div>"+
 				"<div class='row'><div class='col-md-6 sina'><img class='img-responsive' src='"+weeklyUrl+"'/></div>"+
 				"<div class='col-md-6 sina'><img class='img-responsive' src='"+monthUrl+"'/></div></div>"+
-				$('#img1').append(li2);
+				$('#image111').append(li2);
 				}
 		});	
 	}
@@ -145,7 +145,7 @@
                      <hr />
 				</div>
 				<!--end of cont-->
-                <div id="img1">
+                <div id="image111">
                 </div>
 			</div>
 			<!--end of part 1-->

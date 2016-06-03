@@ -6,7 +6,7 @@
 <struts>
 	<constant name="struts.multipart.maxSize" value="10701096" />
 	<constant name="struts.multipart.saveDir" value="f:/tmp" />
-	<package name="default" extends="json-default">
+	<package name="default" namespace="/" extends="json-default">
 		<action name="login" class="cn.com.security_system.action.UserAction"
 			method="login">
 			<result name="success" type="json">
@@ -72,6 +72,10 @@
 			<result name="success" type="json">
 				<param name="root">responseJson</param>
 			</result>
+		</action>
+		<action name="/" class="cn.com.security_system.action.SystemAction"
+			method="getRootView">
+			<result name="success" type="json">/views/login.jsp</result>
 		</action>
 	</package>
 </struts>
