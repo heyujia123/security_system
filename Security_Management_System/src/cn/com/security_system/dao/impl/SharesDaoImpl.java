@@ -117,10 +117,10 @@ public class SharesDaoImpl implements SharesDao {
 
 	@Override
 	public boolean addShares(Shares shares) {
-		String sql = "insert into shares(number,name,category,module,service,sub_service,core_product,positive_fators,nagetive_fators,positive_month) values(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into shares(number,name,category,module,service,sub_service,core_product,positive_factors,nagetive_factors,positive_month) values(?,?,?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql,
 				new Object[] { shares.getNumber(), shares.getName(), shares.getCategory(), shares.getModule(),
-						shares.getModule(), shares.getService(), shares.getSubService(), shares.getCoreProduct(),
+					 shares.getService(), shares.getSubService(), shares.getCoreProduct(),
 						shares.getPositiveFactors(), shares.getNagetiveFactors(), shares.getPositiveMonth() });
 		return true;
 	}

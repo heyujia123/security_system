@@ -211,6 +211,7 @@ public class SharesAction extends ActionSupport {
 	public String addShares(){
 		responseJson = new HashMap<>();
 		try {
+			System.out.println(name+" "+number+" "+category+" "+module+" "+service+" "+subService+" "+coreProduct+" "+positiveFactors+" "+nagetiveFactors+" "+positiveMonth);
 			Shares shares=new Shares();
 			shares.setName(name);;
 			shares.setNumber(number);

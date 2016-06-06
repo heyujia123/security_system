@@ -29,14 +29,14 @@ table {
 			var number = $('#number').val();
 			var name = $('#name').val();
 			var category = $('#category').val();
-			var module=$('module').val;
-			var service=$('service').val;
-			var subService=$('subService').val;
-			var coreProduct=$('coreProduct').val;
-			var positiveFactors=$('positiveFactors').val;
-			var nagetiveFactors=$('nagetiveFactors').val;
-			var positiveMonth=$('positiveMonth').val;
-			if (number == null || name == null || category == null || module ==null || service==null ||subService==null ||coreProduct==null || positiveFactors==null ||nagetiveFactors==null || positiveMonth) {
+			var module=$('#module').val();
+			var service=$('#service').val();
+			var subService=$('#subService').val();
+			var coreProduct=$('#coreProduct').val();
+			var positiveFactors=$('#positiveFactors').val();
+			var nagetiveFactors=$('#nagetiveFactors').val();
+			var positiveMonth=$('#positiveMonth').val();
+			if (number == null || name == null || category == null || module ==null || service==null ||subService==null ||coreProduct==null || positiveFactors==null ||nagetiveFactors==null || positiveMonth==null) {
 				alert('输入错误，不能为空');
 			} else {
 					$.ajax({
@@ -98,61 +98,61 @@ table {
                     	<div class="form-group">
     						<label class="col-sm-2 control-label ">股票代号：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control" />
+								<input id="number" type="text" class="form-control" />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">股票名称：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="name" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">所属行业：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="category" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">所属模块：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control" />
+								<input id="module" type="text" class="form-control" />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">主要业务：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="service" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">副业务：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="subService" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">核心产品：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="coreProduct" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">利好因素：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="positiveFactors" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">利空因素：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="nagetiveFactors" type="text" class="form-control"  />
         					</div>
   						</div>
                         <div class="form-group">
     						<label class="col-sm-2 control-label ">利好月份：</label>
         					<div class="col-sm-5">
-								<input type="text" class="form-control"  />
+								<input id="positiveMonth" type="text" class="form-control"  />
         					</div>
   						</div>
                     </div>
