@@ -91,7 +91,7 @@ public class SharesDaoImpl implements SharesDao {
 
 	@Override
 	public boolean updateShares(Shares shares) {
-		String sql = "update shares set number=?,name=?,category=?,module=?,service=?,sub_service=?,core_product=? ,positive_fators=?,nagetive_fators=?,positive_month=? where id=?";
+		String sql = "update shares set number=?,name=?,category=?,module=?,service=?,sub_service=?,core_product=? ,positive_factors=?,nagetive_factors=?,positive_month=? where id=?";
 		int result = jdbcTemplate.update(sql,
 				new Object[] { shares.getNumber(), shares.getName(), shares.getCategory(), shares.getModule(),
 						shares.getService(), shares.getSubService(), shares.getCoreProduct(),

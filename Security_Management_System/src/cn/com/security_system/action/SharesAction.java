@@ -180,6 +180,9 @@ public class SharesAction extends ActionSupport {
 		shares.setService(service);
 		shares.setSubService(subService);
 		shares.setCoreProduct(coreProduct);
+		shares.setPositiveFactors(positiveFactors);
+		shares.setNagetiveFactors(nagetiveFactors);
+		shares.setPositiveMonth(positiveMonth);
 		shares.setId(id);
 		try {
 			boolean result = sharesDao.updateShares(shares);

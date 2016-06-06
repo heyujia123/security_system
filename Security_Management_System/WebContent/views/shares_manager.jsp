@@ -51,9 +51,9 @@ table {
 										$('#shares').append(li);
 									}
 								});
-						$('#update')
-								.click(
+						$('#update11').click(
 										function() {
+											var id = $('#id').val();
 											var number = $('#number').val();
 											var name = $('#name').val();
 											var category = $('#category').val();
@@ -64,14 +64,12 @@ table {
 											var positiveFactors = $('#positiveFactors').val();
 											var nagetiveFactors = $('#nagetiveFactors').val();
 											var positiveMonth = $('#positiveMonth').val();
-											if (news_title == null|| news_content == null|| publish_time == null)
-												alert('输入错误，不能为空');
-											else {
 												$.ajax({
 															type : "post",
 															url : "updateShares",
 															dataType : "json",
 															data : {
+																"id" : id,
 																"number" : number,
 																"name" : name,
 																"category" : category,
@@ -85,17 +83,13 @@ table {
 															},
 															success : function(
 																	data) {
-																if (data.result == true
-																		|| data.result == "true") {
-																	alert('修改成功 ');
+																if (data.result == true || data.result == "true") {
 																	window.location.href = "manager.jsp";
 																} else
 																	alert("网络连接异常,请稍后重试!");
 															}
 														});
-											}
 										});
-
 						$('#delete').click(
 										function() {
 											var id = $('#id').val();
@@ -143,7 +137,7 @@ table {
 <div id="body1" class="container">
 			<div id="part1">
 				<div id="top">
-					<input class="btn btn-danger" type="button" id="delete" name="delete" value="删除">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn-success" type="button" id="update" name="update" value="修改">
+					<input class="btn btn-danger" type="button" id="delete" name="delete" value="删除">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn-success" type="button" id="update11" name="update" value="修改">
 				</div>
                 <hr />
 				<div id="cont">
